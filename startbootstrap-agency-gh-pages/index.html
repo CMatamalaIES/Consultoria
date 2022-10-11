@@ -89,14 +89,15 @@
                 </div>
 
 
-                <div class="tooltipv2 container-map" id="lienzo">
+                <div class="tooltipv2 container-map row" id="lienzo">
 
-
+                    <div class="col-12 text-center">
                     <svg
                     version="1.0"
-                    width="962.35388"
-                    height="2091.739"
+                    width="100%"
+                    height="1900"
                     id="svg4400"
+                    preserveAspectRatio="xMidYMin meet" viewBox="0 0 1000 30"
                     sodipodi:docname="Mapa_de_Chile_por_IDH-URN.svg"
                     inkscape:version="1.1 (c68e22c387, 2021-05-23)"
                     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -192,11 +193,31 @@
                         inkscape:connector-curvature="0" />
                    </g>
                  </svg>
+                </div>
 
+                <script>
+                    if($(window).width() <= 335){
+                        $("#svg4400").attr("height", 700);
+                    }else if($(window).width() <= 380){
+                        $("#svg4400").attr("height", 800);
+                    }else if($(window).width() <= 475){
+                        $("#svg4400").attr("height", 950);
+                    }else if($(window).width() <= 767){
+                        $("#svg4400").attr("height", 1100);
+                    }else if($(window).width() <= 991){
+                        $("#svg4400").attr("height",1450);
+                    }else if($(window).width() <= 1199){
+                        $("#svg4400").attr("height",2000);
+                    }else{
+                        $("#svg4400").attr("width",600);
+                        $("#svg4400").attr("height",1400);
+                    }
+
+                </script>
 
                 <div class="tooltipv2">
                     <span id="tooltipv2-span">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 70%;">
                             <img id="imagen-tarjeta" class="card-img-top" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title" id="titulo-tarjeta">Card title</h5>
@@ -348,7 +369,7 @@
                         <div class="team-member">
                             <h4>Boletín mes actual</h4>
                             <p class="text-muted">Lead Designer</p>
-                            <button type="button" class="btn btn-primary">Descargar</button>
+                            <a type="button" class="btn btn-primary" href="reportes/Reportes_10-10-2022.rar" target="_blank">Descargar</a>
                         </div>
                     </div>
                     <div class="col-lg-4">

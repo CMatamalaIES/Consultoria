@@ -631,7 +631,6 @@ progress {
 
 .container-map{
     background: #FFF;
-    display: flex;
     place-content: center center;
     margin: auto;
 
