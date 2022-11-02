@@ -1,10 +1,10 @@
 ---
-author: Pablo Aguirre Hörmann
+author: AFC Business Consulting
 output: #word_document
-  pdf_document:
+  word_document:
      reference_docx: FormatoReporte.docx
 params:
-  reg: "Magallanes" 
+  reg: "Maule"
 ---
 
 ```{r opciones de cada chunk de código, echo=FALSE}
@@ -22,7 +22,8 @@ reg <- as.character(reg3[reg3$reg2 == params$reg, 1]) # esto facilita la impresi
 ```
 
 ---
-title: Minuta `r reg`
+title: "Boletín Estadístico: Indice de Pobreza"
+subtitle:   `r reg`
 date: `r format(Sys.Date(), "%d/%m/%Y")`
 ---
 
@@ -49,7 +50,7 @@ source("Scripts/Mapa.R", encoding = "UTF-8")
 
 # 1. Sobre la información presentada [^1]
 
-###### A continuación, se presenta un ejemplo de minuta con diferentes indicadores asociados a la **`r reg`**. Los datos son simulados y no deben ser considerados en ningún caso como información oficial de la SMA. Este reporte fue generado el **`r format(Sys.Date(), "%d/%m/%Y")`**. 
+### A continuación, se presenta un ejemplo de minuta con diferentes indicadores asociados a la **`r reg`**. Los datos son simulados y no deben ser considerados en ningún caso como información oficial sobre el indice de pobreza. Este reporte fue generado el **`r format(Sys.Date(), "%d/%m/%Y")`**. 
 
 [^1]: **UF**: Unidad Fiscalizable / **RCA**: Resolución de Calificación Ambiental / **IA**: Inspección Ambiental / **PPDA**: Plan de Prevensión y Descontaminación Ambiental / **RSMA**: Resolución de normas e instrucciones de carácter de la Superintendencia de Medio ambiente / **PC/PDC**: Programa de Cumplimiento / **NC**: Norma de Contaminación / **LEY**: Ley Ambiental / **REG**: Reglamento / **NE**: Norma de Emisión / **MP**: Medida Provisional / **FDC**: Formulación de Cargos / **MM**: Millones
 
@@ -89,7 +90,7 @@ top_RCA %>%
 
 # 3. Formulaciones de cargo
 
-## 6.1 Formulaciones de cargo (FDC)
+## 3.1 Formulaciones de cargo (FDC)
 
 * La `r reg` ocupa el lugar `r filter(FDC_reg_porcentaje, Region == reg)$rank` respecto al resto de las regiones en número de FdC.
 * De **`r prettyNum(Comparar[1,2] + Comparar[2,2], big.mark = ".", decimal.mark = ",")`** FdC, **`r Comparar[1,2]`** (**`r paste0(prettyNum(round(Comparar[1,2]/(Comparar[1,2] + Comparar[2,2])*100,1), big.mark = ".", decimal.mark = ","),"%")`**) han sido en la **`r reg`**. 
